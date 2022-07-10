@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400;700&family=Nunito+Sans:wght@400;600&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <div class="U-1">
+        <form action="/api/v2/Comments/<%=comment._id%>/edit" method="POST">
+            <h2 class="form-h2">Update Book</h2>
+            <input type="text" name="title" placeholder="Title" value="<%= comment.title %>">
+            <div class="btn">
+                <input type="submit" value="Update Comment">
+            </div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
