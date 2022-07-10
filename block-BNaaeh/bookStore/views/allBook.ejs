@@ -16,13 +16,13 @@
             <ul>
               
                     <li>
-                        <a href="/">Home</span></a>
+                        <a href="/api">Home</span></a>
                     </li> 
                 <li>
-                    <a href="/api/v1Books/new">Add Book</a>
+                    <a href="/api/v1/Books/new">Add Book</a>
                 </li>
                 <li>
-                    <form action="/api/v1Books/search" method="POST">
+                    <form action="/api/v1/Books/search" method="POST">
                         <input type="text" name="book" placeholder="Search Book..." class="search-bar">
                         <input type="submit" value="Search" class="search-btn">
                     </form>
@@ -38,7 +38,7 @@
 <img src="/images/<%= book.cover_image %>" alt="<%=book.cover_imag%>" class="search-img">
 <h2> <%= book.title %> </h2>
 <p> <%= book.name %> </p>
-<a href="/api/v1Books/<%= book._id%>/" class="allBook-btn">
+<a href="/api/v1/Books/<%= book._id%>/" class="allBook-btn">
     Show</a>
 </div>
         <%  }) %>

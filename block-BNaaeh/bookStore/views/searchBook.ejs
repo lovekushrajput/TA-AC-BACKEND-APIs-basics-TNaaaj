@@ -15,10 +15,10 @@
         <nav>
             <ul>
                 <li>
-                    <a href="/">Home</a>
+                    <a href="/api">Home</a>
                 </li>
                 <li>
-                    <a href="/api/v1Books">All Books</a>
+                    <a href="/api/v1/Books">All Books</a>
                 </li>
             </ul>
         </nav>
@@ -29,7 +29,7 @@
                 <img src="/images/<%= b1.cover_image %>" alt="<%=b1.cover_imag%>" class="search-img">
                 <h2> <%= b1.title %> </h2>
                 <p> <%= b1.name %> </p>
-                <a href="/books/<%= b1._id%>/" class="show-btn">Show</a>
+                <a href="/api/v1/Books/<%= b1._id%>/" class="show-btn">Show</a>
             </div>
         <% })%>
     </article>
