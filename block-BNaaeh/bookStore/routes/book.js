@@ -33,7 +33,7 @@ router.get('/', function (req, res, next) {
 //search bar
 router.post('/search', (req, res, next) => {
   if (req.body.book == '') {
-    res.redirect('//api/v1Books')
+    res.redirect('/api/v1/Books')
   } else {
     Book.find({ title: req.body.book } || { title: req.body.book } || { name: req.body.book }, (err, books) => {
       if (err) return next(err)
@@ -52,7 +52,7 @@ router.post('/', upload.single('cover_image'), (req, res, next) => {
   req.body.cover_image = req.file.filename
   Book.create(req.body, (err, book) => {
     if (err) return next(err)
-    res.redirect('/api/v1Books')
+    res.redirect('/api/v1/Books')
   })
 })
 
@@ -94,7 +94,7 @@ router.post('/:id', upload.single('cover_image'), (req, res, next) => {
   req.body.cover_image = new_image
   Book.findByIdAndUpdate(id, req.body, (err, book) => {
     if (err) return next(err)
-    res.redirect('/api/v1Books/' + id)
+    res.redirect('/api/v1/Books/' + id)
   })
 })
 
@@ -109,10 +109,10 @@ router.get('/:id/delete', (req, res) => {
         console.log(error)
       }
     } else {
-      res.redirect('/api/v1Books')
+      res.redirect('/api/v1/Books')
     }
     if (err) return next(err)
-    res.redirect('/api/v1Books')
+    res.redirect('/api/v1/Books')
   })
 })
 

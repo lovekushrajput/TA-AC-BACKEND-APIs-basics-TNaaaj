@@ -17,10 +17,10 @@
         <nav>
             <ul>
                 <li>
-                    <a href="/api/v1Books">Back</a>
+                    <a href="/api/v1/Books">Back</a>
                 </li>
                 <li>
-                    <a href="/api/v1Books/new">Add Book</a>
+                    <a href="/api/v1/Books/new">Add Book</a>
                 </li>
             </ul>
         </nav>
@@ -42,12 +42,12 @@
         <p>Category: <%= book.category %>
         </p>
         <div>
-            <a href="/api/v1Books/<%= book._id%>/edit">Edit</a>
-            <a href="/api/v1Books/<%= book._id%>/delete"">Delete</a>
+            <a href="/api/v1/Books/<%= book._id%>/edit">Edit</a>
+            <a href="/api/v1/Books/<%= book._id%>/delete"">Delete</a>
     </div>
   <hr>
     <h2>Comments</h2>
-    <form action=" /api/v2Comments/<%=book._id%>/new" method="POST">
+    <form action=" /api/v2/Comments/<%=book._id%>/new" method="POST">
                 <input type="text" name="title" placeholder="Comment">
                 <input type="submit">
                 </form>
@@ -55,8 +55,8 @@
                 <% book.commentId.forEach((comment)=> { %>
                     <p>
                         <%= comment.title%>
-                        <a href="/api/v2Comments/<%=comment._id%>/edit">Edit</a>
-                        <a href="/api/v2Comments/<%=comment._id%>/delete">Delete</a>
+                        <a href="/api/v2/Comments/<%=comment._id%>/edit">Edit</a>
+                        <a href="/api/v2/Comments/<%=comment._id%>/delete">Delete</a>
                     </p>
                     <% }) %>
     </section>

@@ -12,7 +12,7 @@ router.post('/:bookId/new', (req, res, next) => {
         if (err) return next(err)
         Book.findByIdAndUpdate(bookId, { $push: { commentId: comments._id } }, (err, book) => {
             if (err) return next(err)
-            res.redirect('/api/v1Books/' + bookId)
+            res.redirect('/api/v1/Books/' + bookId)
         })
     })
 })
@@ -28,7 +28,7 @@ router.get('/:id/edit', (req, res, next) => {
 router.post('/:id/edit', (req, res, next) => {
     Comment.findByIdAndUpdate(req.params.id, req.body, (err, comment) => {
         if (err) return next(err)
-        res.redirect('/api/v1Books/' + comment.bookId)
+        res.redirect('/api/v1/Books/' + comment.bookId)
     })
 })
 
@@ -38,7 +38,7 @@ router.get('/:id/delete', (req, res, next) => {
         if (err) return next(err)
         Book.findByIdAndUpdate(comment.bookId, { $pull: { commentId: comment._id } }, (err, book) => {
             if (err) return next(err)
-            res.redirect('/api/v1Books/' + comment.bookId)
+            res.redirect('/api/v1/Books/' + comment.bookId)
         })
     })
 })

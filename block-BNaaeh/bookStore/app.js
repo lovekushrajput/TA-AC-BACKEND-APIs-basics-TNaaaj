@@ -6,8 +6,8 @@ var logger = require('morgan');
 var mongoose = require('mongoose')
 
 //mongoose connect
-mongoose.connect('mongodb://localhost/bookStore',(err)=>{
-  console.log('connected',err ? err : 'true')
+mongoose.connect('mongodb://localhost/bookStore', (err) => {
+  console.log('connected', err ? err : 'true')
 })
 
 var indexRouter = require('./routes/index');
@@ -26,17 +26,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/api/v1Books', v1BooksRouter);
-app.use('/api/v2Comments', v2CommentRouter);
+app.use('/api', indexRouter);
+app.use('/api/v1/Books', v1BooksRouter);
+app.use('/api/v2/Comments', v2CommentRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
